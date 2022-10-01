@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dice Game</title>
+  </head>
+  <body>
+    <!-- PLAYER'S DATA -->
+    <!-- PLAYER DATA 1 -->
+    <section class="playerdata playerdata--1">
+      <form class="input input-content">
+        <h1>TheOptimum Dice Game</h1>
+        <p>Please input the player information accordingly</p>
+        <h2>Player 1</h2>
+        <input
+          type="text"
+          id="player1"
+          name="name"
+          minlength="3"
+          placeholder="Enter Player's Name"
+        /><br />
+        <button class="btn--proceed btn--proceed1">Proceed</button>
+      </form>
+      <!-- <div class="overlay hidden"></div> -->
+    </section>
+    
+    <!-- PLAYER DATA 2 -->
+    <section class="playerdata playerdata--2 hide">
+      <form class="input input-content">
+        <h1>TheOptimum Dice Game</h1>
+        <p>Please input the player information accordingly</p>
+        <h2>Player 2</h2>
+        <input
+          type="text"
+          id="player2"
+          name="name"
+          minlength="3"
+          placeholder="Enter Player's Name"
+        /><br />
+        <button class="btn--proceed btn--proceed2">Proceed</button>
+      </form>
+      <!-- <div class="overlay hidden"></div> -->
+    </section>
+    <!-- END OF PLAYER'S DATA -->
+
+    <main id="main hide">
+      <section class="player player--0 player--active">
+        <h2 class="name" id="name--0">Player 1</h2>
+        <p class="score" id="score--0">43</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--0">0</p>
+        </div>
+      </section>
+      <section class="player player--1">
+        <h2 class="name" id="name--1">Player 2</h2>
+        <p class="score" id="score--1">24</p>
+        <div class="current">
+          <p class="current-label">Current</p>
+          <p class="current-score" id="current--1">0</p>
+        </div>
+      </section>
+
+      <img src="dice-5.png" alt="Playing dice" class="dice" />
+      <button class="btn btn--new">🔄 New game</button>
+      <button class="btn btn--roll">🎲 Roll dice</button>
+      <button class="btn btn--hold">📥 Hold</button>
+      <button class="btn btn--rule">🎮 Game Rule</button>
+
+      <div class="modal modal-content">
+        <button class="close-modal">&times;</button>
+        <h1>TheOptimum Dice Game</h1>
+        <p>
+          First player to get an accumulated score of 50 points wins the game
+          and if a player rolls a 1, the player's current point will be
+          automatically become 0 and the game will switch to the next player.
+          Note! If you think the next coming roll might be 1, you can press
+          HOLD. Good Luck Guys!
+        </p>
+        <button class="btn--okay">Ok</button>
+      </div>
+      <div class="overlay hidden"></div>
+
+      <audio id="sound"><source src="./Mouse-Click.mp3" /></audio>
+      <audio id="rolldie"><source src="./rolldie.wav" /></audio>
+      <audio id="switchplayer"><source src="./switch-player.wav" /></audio>
+      <audio id="cheer"><source src="./cheer.wav" /></audio>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
